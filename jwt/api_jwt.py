@@ -67,8 +67,8 @@ class PyJWT(PyJWS):
             payload = json.loads(decoded.decode('utf-8'))
         except ValueError as e:
             raise DecodeError('Invalid payload string: %s' % e)
-        if not isinstance(payload, Mapping):
-            raise DecodeError('Invalid payload string: must be a json object')
+        #if not isinstance(payload, Mapping):
+        #    raise DecodeError('Invalid payload string: must be a json object')
 
         if verify:
             merged_options = merge_dict(self.options, options)
